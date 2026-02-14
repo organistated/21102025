@@ -10,7 +10,7 @@ const App: React.FC = () => {
 
     setTimeout(() => {
       setStarted(true);
-    }, 3000); // czas trwania intro
+    }, 7500); // czas trwania intro
   };
 
   return (
@@ -37,7 +37,7 @@ const App: React.FC = () => {
             zIndex: 9999,
           }}
         >
-          Kliknij, aby wejść
+          ❤️‍🔥❤️‍🔥❤️‍🔥
         </div>
       )}
 

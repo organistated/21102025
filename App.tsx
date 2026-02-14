@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
         {/* Layers 2-5: Gallery Images */}
         {[
-          '/image_001.JPG',
+          'https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/image_001.JPG',
           'https://images.unsplash.com/photo-1511733847644-16d7d124ff53',
           'https://images.unsplash.com/photo-1522673607200-164848374c08',
           'https://images.unsplash.com/photo-1516589174184-c68d8e414c48'

@@ -36,19 +36,42 @@ const App: React.FC = () => {
     return () => observer.disconnect();
   }, []);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [showIntro, setShowIntro] = useState(true);
 
-  useEffect(() => {
-    const playMusic = () => {
-      audioRef.current?.play();
-      window.removeEventListener("click", playMusic);
-    };
+  const handleClick = () => {
+    audioRef.current?.play();
 
-    window.addEventListener("click", playMusic);
-  }, []);
+    // po 3 sekundach znika czarny ekran
+    setTimeout(() => {
+      setShowIntro(false);
+    }, 3000);
+  };
 
   return (
     <div className="bg-black relative">
-      <audio src="https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/music.mp3" ref={audioRef} loop/>
+      <audio src="https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/music.mp3" ref={audioRef}/>
+        {showIntro && (
+        <div
+          onClick={handleClick}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            fontSize: "24px",
+            cursor: "pointer",
+            zIndex: 9999,
+          }}
+        >
+          Kliknij, aby wejść
+        </div>
+      )}
       {/* GLOBAL 3D SCENE */}
       <div className="fixed inset-0 z-[5] pointer-events-none">
         <Journey3D activeSection={activeSection} />

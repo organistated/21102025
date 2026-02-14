@@ -58,10 +58,10 @@ const App: React.FC = () => {
 
         {/* Layers 2-5: Gallery Images */}
         {[
-          'https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/image_001.JPG',
-          'https://images.unsplash.com/photo-1511733847644-16d7d124ff53',
-          'https://images.unsplash.com/photo-1522673607200-164848374c08',
-          'https://images.unsplash.com/photo-1516589174184-c68d8e414c48'
+          'https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/image_001.jpg',
+          'https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/image_002.jpg',
+          'https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/image_003.jpg',
+          'https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/image_004.png'
         ].map((url, i) => (
           <div key={i} className={`bg-layer ${activeSection === i + 2 ? 'active' : ''}`}>
              <img src={`${url}?auto=format&fit=crop&q=80&w=1920`} className="w-full h-full object-cover opacity-30" alt="" />

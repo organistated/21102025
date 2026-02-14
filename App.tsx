@@ -12,12 +12,12 @@ const App: React.FC = () => {
     // zaczynamy fade-out po 7.5 sekundy
     setTimeout(() => {
       setFadeOut(true);
-    }, 7000);
+    }, 6500);
 
     // po czasie animacji usuwamy intro i pokazujemy stronę
     setTimeout(() => {
       setStarted(true);
-    }, 7500); // 1 sekunda na animację
+    }, 7000); // 1 sekunda na animację
   };
 
   return (

@@ -12,12 +12,12 @@ const App: React.FC = () => {
     // zaczynamy fade-out po 7.5 sekundy
     setTimeout(() => {
       setFadeOut(true);
-    }, 7500);
+    }, 7000);
 
     // po czasie animacji usuwamy intro i pokazujemy stronę
     setTimeout(() => {
       setStarted(true);
-    }, 8500); // 1 sekunda na animację
+    }, 7500); // 1 sekunda na animację
   };
 
   return (
@@ -43,7 +43,7 @@ const App: React.FC = () => {
             cursor: "pointer",
             zIndex: 9999,
             opacity: fadeOut ? 0 : 1,
-            transition: "opacity 1s ease"
+            transition: "opacity .5s ease"
           }}
         >
           ❤️‍🔥❤️‍🔥❤️‍🔥

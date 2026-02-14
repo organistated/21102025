@@ -35,9 +35,20 @@ const App: React.FC = () => {
 
     return () => observer.disconnect();
   }, []);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const playMusic = () => {
+      audioRef.current?.play();
+      window.removeEventListener("click", playMusic);
+    };
+
+    window.addEventListener("click", playMusic);
+  }, []);
 
   return (
     <div className="bg-black relative">
+      <audio src="https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/music.mp3" ref={audioRef} loop/>
       {/* GLOBAL 3D SCENE */}
       <div className="fixed inset-0 z-[5] pointer-events-none">
         <Journey3D activeSection={activeSection} />
@@ -84,7 +95,6 @@ const App: React.FC = () => {
         <div className="snap-section" data-index="1">
           <Countdown targetDate={TARGET_DATE} />
         </div>
-        <audio src="https://raw.githubusercontent.com/organistated/21102025/refs/heads/main/music.mp3" autoPlay loop/>
         <div className="snap-section" data-index="2">
           <Gallery step={0} />
         </div>

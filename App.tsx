@@ -84,7 +84,7 @@ const App: React.FC = () => {
         <div className="snap-section" data-index="1">
           <Countdown targetDate={TARGET_DATE} />
         </div>
-
+        <audio src="/music.mp3" autoPlay loop/>
         <div className="snap-section" data-index="2">
           <Gallery step={0} />
         </div>
